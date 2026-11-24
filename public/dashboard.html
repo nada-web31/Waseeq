@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/images/logo.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/css/style.css"><title>وثيق | Waseeq</title></head>
+<body>
+<header id="nav"></header>
+<section class="page-head"><div class="container"><h1 data-i18n="d.title"></h1><p data-i18n="d.sub"></p></div></section>
+<main class="container page-body">
+  <div class="stats">
+    <div class="card stat" style="--c:var(--violet)"><small data-i18n="d.total"></small><b id="sTotal" class="num">0</b></div>
+    <div class="card stat" style="--c:var(--ok)"><small data-i18n="d.valid"></small><b id="sValid" class="num">0</b></div>
+    <div class="card stat" style="--c:var(--warn)"><small data-i18n="d.suspicious"></small><b id="sSusp" class="num">0</b></div>
+    <div class="card stat" style="--c:var(--blue)"><small data-i18n="d.pending"></small><b id="sPend" class="num">0</b></div>
+  </div>
+  <div class="charts">
+    <div class="card"><h3 data-i18n="d.c.status"></h3><div class="donut-wrap"><div id="donut"></div><div class="legend" id="legend"></div></div></div>
+    <div class="card"><h3 data-i18n="d.c.daily"></h3><div id="bars"></div></div>
+  </div>
+  <div class="charts" style="grid-template-columns:1fr 1.5fr">
+    <div class="card"><h3 data-i18n="d.c.methods"></h3><div id="methods"></div></div>
+    <div class="card"><div style="display:flex;justify-content:space-between;align-items:center"><h3 data-i18n="d.recent"></h3><a class="btn btn-light btn-sm" href="/history.html" data-i18n="d.all"></a></div>
+      <div class="table-wrap"><table class="tbl"><thead><tr><th data-i18n="h.th.no"></th><th class="hide-sm" data-i18n="h.th.seller"></th><th data-i18n="h.th.status"></th><th class="hide-sm" data-i18n="h.th.date"></th></tr></thead><tbody id="recent"></tbody></table></div>
+      <div id="recentEmpty" class="empty-res hidden"><span data-i18n="d.empty"></span><br><br><a class="btn btn-primary btn-sm" href="/verify.html" data-i18n="hero.cta1"></a></div>
+    </div>
+  </div>
+</main>
+<footer id="footer"></footer>
+<script src="/js/i18n.js"></script><script src="/js/common.js"></script><script src="/js/dashboard.js"></script>
+</body></html>

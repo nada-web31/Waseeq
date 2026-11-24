@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/images/logo.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/css/style.css"><title>وثيق | Waseeq</title></head>
+<body>
+<header id="nav"></header>
+<section class="page-head"><div class="container"><h1 data-i18n="h.title"></h1><p data-i18n="h.sub"></p></div></section>
+<main class="container page-body"><div class="card">
+  <div class="toolbar">
+    <input class="input" id="q" type="search" data-i18n-ph="h.search">
+    <select class="input" id="status"><option value="" data-i18n="h.all"></option><option value="valid" data-i18n="s.valid"></option><option value="suspicious" data-i18n="s.suspicious"></option><option value="invalid" data-i18n="s.invalid"></option><option value="pending" data-i18n="s.pending"></option><option value="review" data-i18n="h.review"></option></select>
+  </div>
+  <div class="table-wrap"><table class="tbl"><thead><tr><th data-i18n="h.th.no"></th><th data-i18n="h.th.seller"></th><th class="hide-sm" data-i18n="h.th.total"></th><th class="hide-sm" data-i18n="h.th.method"></th><th data-i18n="h.th.status"></th><th class="hide-sm" data-i18n="h.th.date"></th></tr></thead><tbody id="rows"></tbody></table></div>
+  <div id="empty" class="empty-res hidden" data-i18n="h.empty"></div>
+  <div class="pager"><button class="btn btn-light btn-sm" id="prev" data-i18n="h.prev"></button><span id="pageInfo"></span><button class="btn btn-light btn-sm" id="next" data-i18n="h.next"></button></div>
+</div></main>
+<dialog id="dlg"><div class="dlg-in" id="dlgBody"></div></dialog>
+<footer id="footer"></footer>
+<script src="/js/i18n.js"></script><script src="/js/common.js"></script><script src="/js/history.js"></script>
+</body></html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/images/logo.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/css/style.css"><title>وثيق | Waseeq</title></head>
+<body>
+<header id="nav"></header>
+<main class="auth-wrap"><div class="auth-card">
+  <h2 style="margin:0 0 4px" data-i18n="auth.welcome"></h2>
+  <p class="muted" style="margin:0 0 20px" data-i18n="auth.loginSub"></p>
+  <div class="tabs"><button class="tab active" data-tab="login" data-i18n="auth.login"></button><button class="tab" data-tab="register" data-i18n="auth.register"></button></div>
+  <div id="msg"></div>
+  <form id="loginForm" novalidate>
+    <div class="field"><label for="le" data-i18n="auth.email"></label><input class="input" id="le" type="email" autocomplete="email" required></div>
+    <div class="field"><label for="lp" data-i18n="auth.password"></label><input class="input" id="lp" type="password" autocomplete="current-password" required></div>
+    <button class="btn btn-primary" style="width:100%" type="submit" data-i18n="auth.login"></button>
+  </form>
+  <form id="registerForm" class="hidden" novalidate>
+    <div class="field"><label for="rn" data-i18n="auth.name"></label><input class="input" id="rn" autocomplete="name" required maxlength="60"></div>
+    <div class="field"><label for="re" data-i18n="auth.email"></label><input class="input" id="re" type="email" autocomplete="email" required></div>
+    <div class="field"><label for="rp" data-i18n="auth.password"></label><input class="input" id="rp" type="password" autocomplete="new-password" required minlength="8"><small class="muted" data-i18n="auth.hint"></small></div>
+    <button class="btn btn-primary" style="width:100%" type="submit" data-i18n="auth.register"></button>
+  </form>
+</div></main>
+<script src="/js/i18n.js"></script><script src="/js/common.js"></script><script src="/js/auth.js"></script>
+</body></html>

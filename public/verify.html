@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/images/logo.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/css/style.css"><title>وثيق | Waseeq</title></head>
+<body>
+<header id="nav"></header>
+<section class="page-head"><div class="container"><h1 data-i18n="v.title"></h1><p data-i18n="v.sub"></p></div></section>
+<main class="container page-body">
+  <div class="method-tabs" role="tablist">
+    <button class="mtab active" data-m="upload"><span>📄</span><b data-i18n="v.tab.upload"></b></button>
+    <button class="mtab" data-m="qr"><span>📷</span><b data-i18n="v.tab.qr"></b></button>
+    <button class="mtab" data-m="manual"><span>⌨</span><b data-i18n="v.tab.manual"></b></button>
+  </div>
+  <div class="verify-grid">
+    <div class="card">
+      <div id="formMsg"></div>
+
+      <!-- Upload -->
+      <form id="pane-upload" novalidate>
+        <label class="drop" id="drop" for="fileInput"><b data-i18n="v.drop"></b><small data-i18n="v.fileHint"></small></label>
+        <input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf" class="hidden">
+        <div id="filePrev"></div>
+        <div id="upNote" class="muted" style="margin:10px 0;font-size:.9rem"></div>
+        <details class="more"><summary data-i18n="v.optional"></summary>
+          <p class="muted" style="margin-top:0;font-size:.88rem" data-i18n="v.optionalHint"></p>
+          <div class="field"><label for="u_invoiceNumber" data-i18n="f.invoiceNumber"></label><input class="input" id="u_invoiceNumber" maxlength="60"></div>
+          <div class="field"><label for="u_sellerName" data-i18n="f.sellerName"></label><input class="input" id="u_sellerName" maxlength="250"></div>
+          <div class="row2">
+            <div class="field"><label for="u_vatNumber" data-i18n="f.vatNumber"></label><input class="input num" id="u_vatNumber" inputmode="numeric" maxlength="15"></div>
+            <div class="field"><label for="u_date" data-i18n="f.date"></label><input class="input" id="u_date" type="date"></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="u_total" data-i18n="f.total"></label><input class="input num" id="u_total" inputmode="decimal"></div>
+            <div class="field"><label for="u_vatAmount" data-i18n="f.vatAmount"></label><input class="input num" id="u_vatAmount" inputmode="decimal"></div>
+          </div>
+        </details>
+        <button class="btn btn-primary" type="submit" data-i18n="v.submit"></button>
+      </form>
+
+      <!-- QR -->
+      <div id="pane-qr" class="hidden">
+        <div class="cam" id="cam"><video id="video" playsinline muted class="hidden"></video><div class="frame hidden" id="camFrame"></div><span id="camHint" data-i18n="v.camHint"></span></div>
+        <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+          <button class="btn btn-primary" id="camBtn" type="button" data-i18n="v.startCam"></button>
+        </div>
+        <div id="qrResult" class="hidden">
+          <div class="qr-prev" id="qrPrev"></div>
+          <div class="field" style="margin-top:14px"><label for="q_invoiceNumber" data-i18n="f.invoiceNumber"></label><input class="input" id="q_invoiceNumber" maxlength="60"></div>
+          <button class="btn btn-primary" id="qrSubmit" type="button" data-i18n="v.submit"></button>
+          <button class="btn btn-light" id="qrAgain" type="button" data-i18n="v.rescan"></button>
+        </div>
+      </div>
+
+      <!-- Manual -->
+      <form id="pane-manual" class="hidden" novalidate>
+        <div class="samples">
+          <button type="button" class="btn btn-light btn-sm" id="sampleOk" data-i18n="v.sampleOk"></button>
+          <button type="button" class="btn btn-light btn-sm" id="sampleBad" data-i18n="v.sampleBad"></button>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="m_invoiceNumber" data-i18n="f.invoiceNumber"></label><input class="input" id="m_invoiceNumber" maxlength="60"></div>
+          <div class="field"><label for="m_date" data-i18n="f.date"></label><input class="input" id="m_date" type="date"></div>
+        </div>
+        <div class="field"><label for="m_sellerName" data-i18n="f.sellerName"></label><input class="input" id="m_sellerName" maxlength="250"></div>
+        <div class="field"><label for="m_vatNumber" data-i18n="f.vatNumber"></label><input class="input num" id="m_vatNumber" inputmode="numeric" maxlength="15"></div>
+        <div class="row2">
+          <div class="field"><label for="m_total" data-i18n="f.total"></label><input class="input num" id="m_total" inputmode="decimal"></div>
+          <div class="field"><label for="m_vatAmount" data-i18n="f.vatAmount"></label><input class="input num" id="m_vatAmount" inputmode="decimal"></div>
+        </div>
+        <div class="field"><label for="m_qr" data-i18n="f.qr"></label><textarea class="input num" id="m_qr" rows="2" maxlength="2000"></textarea></div>
+        <button class="btn btn-primary" type="submit" data-i18n="v.submit"></button>
+      </form>
+    </div>
+
+    <div class="result" id="result"><div class="empty-res" data-i18n="r.empty"></div></div>
+  </div>
+</main>
+<footer id="footer"></footer>
+<script src="/js/i18n.js"></script><script src="/js/common.js"></script><script src="/js/verify.js"></script>
+</body></html>
